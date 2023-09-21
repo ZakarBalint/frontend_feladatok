@@ -1,0 +1,65 @@
+.flex-container > div {
+    width: 350px;
+    height: 200px;
+    margin: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button
+{
+    width: 75px;
+    height: 50px;
+}
+
+input
+{
+    width: 100px;
+}
+
+:root
+{
+    --div_1-bg-color: red;
+    --div_2-bg-color: blue;
+    --div_3-bg-color: green;
+    --div_4-bg-color: pink;
+    --div_5-bg-color: aqua;
+    --div_6-bg-color: orange;
+    --div_7-bg-color: olive;
+    --div_8-bg-color: gray;
+}
+
+.div_1{
+    background-color: var(--div_1-bg-color);
+}
+
+.div_2{
+    background-color: var(--div_2-bg-color);
+}
+
+.div_3{
+    background-color: var(--div_3-bg-color);
+}
+
+.div_4{
+    background-color: var(--div_4-bg-color);
+}
+
+.div_5{
+    background-color: var(--div_5-bg-color);
+}
+
+.div_6{
+    background-color: var(--div_6-bg-color);
+}
+
+.div_7{
+    background-color: var(--div_7-bg-color);
+}
+
+.div_8{
+    background-color: var(--div_8-bg-color);
+}
