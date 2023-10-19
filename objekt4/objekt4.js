@@ -13,10 +13,9 @@ window.onload = function()
         for (const key in obj) {
             if (Object.hasOwnProperty.call(obj, key)) {
                 const element = obj[key];
-                
-                let line = `<p>Firstname: ${element.firstName}<br> Lastname: ${element.lastName}<br> Job: ${element.job}</p>`;
 
-                document.getElementById("content").innerHTML += `<div>${line}</div>`;
+                document.getElementById("content").innerHTML += `<div class="kartya"><h3>${element.firstName} ${element.lastName}
+                </h3><div class="kep"><img src="" alt="Kép a hősről"></div><p class="szoveg">Job: ${element.job}</p></div>`;
             }
         }
 
