@@ -1,14 +1,11 @@
 window.onload = function()
 {
-    //console.log("loaded");
 
     document.getElementById("store").onclick = function()
     {
-        console.log("Click");
 
         let key = JSON.stringify(document.getElementById("key").value);
         let value = JSON.stringify(document.getElementById("value").value);
-
 
         const select = document.getElementsByTagName("select")[0].value;
 
@@ -16,16 +13,14 @@ window.onload = function()
         {
             console.log(key + value);
             localStorage.setItem(key, value);
-            document.getElementById("ki").innerHTML = `Local Storage: ${localStorage.getItem(key)}`;
         }
         else if(select == "session")
         {
             console.log(key + value);
             sessionStorage.setItem(key, value);
-            document.getElementById("ki").innerHTML = `Session Storage: ${sessionStorage.getItem(key)}`;
         }
 
-        
+        showStorage();
     }
 
     showStorage();
@@ -33,10 +28,34 @@ window.onload = function()
     function showStorage()
     {
         let ki = "";
-        let key = document.getElementById("key").value;
-        ki += `Local Storage: ${localStorage.getItem(key)}<br>`;
-        ki += `Session Storage: ${sessionStorage.getItem(key)}`;
+        let key = JSON.stringify(document.getElementById("key").value);
 
-        document.getElementById("ki").innerHTML = ki;
+        if(localStorage.getItem(key) != null)
+        {
+            ki += `Local Storage: Key: ${key}, Value: ${localStorage.getItem(key)}<br>`;
+        }
+        else
+        {
+            ki += `Local Storage: Key: ${key}, Adat nem érhető el<br>`;
+        }
+
+        if(sessionStorage.getItem(key) != null)
+        {
+            ki += `Session Storage: Key: ${key}, Value: ${sessionStorage.getItem(key)}<br>`;
+        }
+        else
+        {
+            ki += `Session Storage: Key: ${key}, Adat nem érhető el<br>`;
+        }
+
+        document.getElementById("ki").innerHTML += ki;
+    }
+
+    document.getElementById("clear").onclick = function()
+    {
+        localStorage.clear();
+        sessionStorage.clear();
+
+        showStorage();
     }
 }
