@@ -51,11 +51,16 @@ window.onload = function()
         document.getElementById("ki").innerHTML += ki;
     }
 
-    document.getElementById("clear").onclick = function()
+    document.getElementById("local_clear").onclick = function()
     {
         localStorage.clear();
-        sessionStorage.clear();
+        showStorage();
+    }
 
+    
+    document.getElementById("session_clear").onclick = function()
+    {
+        sessionStorage.clear();
         showStorage();
     }
 }
